@@ -1,0 +1,143 @@
+{
+  "freeTextAnnotations": [],
+  "freeShapeAnnotations": [],
+  "trafficRateAnnotations": [],
+  "scriptButtonAnnotations": [],
+  "groupStyleAnnotations": [],
+  "networkNodeAnnotations": [],
+  "nodeAnnotations": [
+    {
+      "id": "client1",
+      "position": {
+        "x": -200,
+        "y": 340
+      },
+      "icon": "client",
+      "interfacePattern": "eth{n}"
+    },
+    {
+      "id": "client2",
+      "position": {
+        "x": -80,
+        "y": 340
+      },
+      "icon": "client",
+      "interfacePattern": "eth{n}"
+    },
+    {
+      "id": "client3",
+      "position": {
+        "x": 80,
+        "y": 340
+      },
+      "icon": "client",
+      "interfacePattern": "eth{n}"
+    },
+    {
+      "id": "client4",
+      "position": {
+        "x": 200,
+        "y": 340
+      },
+      "icon": "client",
+      "interfacePattern": "eth{n}"
+    },
+    {
+      "id": "client5",
+      "position": {
+        "x": 360,
+        "y": 340
+      },
+      "icon": "client",
+      "interfacePattern": "eth{n}"
+    },
+    {
+      "id": "client6",
+      "position": {
+        "x": 480,
+        "y": 340
+      },
+      "icon": "client",
+      "interfacePattern": "eth{n}"
+    },
+    {
+      "id": "client7",
+      "position": {
+        "x": 640,
+        "y": 340
+      },
+      "icon": "client",
+      "interfacePattern": "eth{n}"
+    },
+    {
+      "id": "client8",
+      "position": {
+        "x": 760,
+        "y": 340
+      },
+      "icon": "client",
+      "interfacePattern": "eth{n}"
+    },
+    {
+      "id": "acc4",
+      "position": {
+        "x": 640,
+        "y": 60
+      }
+    },
+    {
+      "id": "acc3",
+      "position": {
+        "x": 380,
+        "y": 60
+      }
+    },
+    {
+      "id": "acc2",
+      "position": {
+        "x": 100,
+        "y": 60
+      }
+    },
+    {
+      "id": "acc1",
+      "position": {
+        "x": -140,
+        "y": 60
+      }
+    },
+    {
+      "id": "agg2",
+      "position": {
+        "x": 500,
+        "y": -80
+      }
+    },
+    {
+      "id": "agg1",
+      "position": {
+        "x": -40,
+        "y": -100
+      }
+    },
+    {
+      "id": "core2",
+      "position": {
+        "x": 380,
+        "y": -260
+      }
+    },
+    {
+      "id": "core1",
+      "position": {
+        "x": 100,
+        "y": -260
+      }
+    }
+  ],
+  "edgeAnnotations": [],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {
+    "nodeStyle": "boxed"
+  }
+}
