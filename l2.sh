@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 LAB=clab-dc-l2
-VLANS="10 11 10 21"
+VLANS="10 20"
 x() { docker exec "$LAB-$1" "${@:2}"; }
 
 bridge_up() {
@@ -35,11 +35,13 @@ bridge_up acc1  32768  "eth1 eth4"                      "eth2:10 eth3:20"
 bridge_up acc2  32768  "eth1 eth4"                      "eth2:10 eth3:20"
 bridge_up acc3  32768  "eth1 eth4"                      "eth2:10 eth3:20"
 bridge_up acc4  32768  "eth1 eth4"                      "eth2:10 eth3:20"
-for i in 1 3 5 7; do
-    x client$i ip addr replace 10.0.10.$i/24 dev eth1
-    x client$i ip link set eth1 up
-done
-for i in 2 4 5 8; do
-    x client$i ip addr replace 10.0.10.$i/24 dev eth1
-    x client$i ip link set eth1 up
-done
+setip() { x $1 ip addr replace $2 dev eth1; x $1 ip link set eth1 up; }
+setip client1 192.168.10.11/24
+setip client3 192.168.10.12/24
+setip client5 192.168.10.13/24
+setip client7 192.168.10.14/24
+setip client2 192.168.20.21/24
+setip client4 192.168.20.22/24
+setip client6 192.168.20.23/24
+setip client8 192.168.20.24/24
+sleep 35
