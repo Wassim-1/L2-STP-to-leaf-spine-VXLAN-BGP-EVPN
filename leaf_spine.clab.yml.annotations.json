@@ -7,7 +7,7 @@
   "networkNodeAnnotations": [],
   "nodeAnnotations": [
     {
-      "id": "sw1",
+      "id": "spine1",
       "position": {
         "x": 100,
         "y": -340
@@ -16,7 +16,7 @@
       "interfacePattern": "eth{n}"
     },
     {
-      "id": "sw2",
+      "id": "spine2",
       "position": {
         "x": 540,
         "y": -340
@@ -25,7 +25,7 @@
       "interfacePattern": "eth{n}"
     },
     {
-      "id": "sw3",
+      "id": "leaf4",
       "position": {
         "x": 620,
         "y": -180
@@ -34,7 +34,7 @@
       "interfacePattern": "eth{n}"
     },
     {
-      "id": "sw4",
+      "id": "leaf3",
       "position": {
         "x": 480,
         "y": -180
@@ -43,7 +43,7 @@
       "interfacePattern": "eth{n}"
     },
     {
-      "id": "sw5",
+      "id": "leaf2",
       "position": {
         "x": 180,
         "y": -180
@@ -52,7 +52,7 @@
       "interfacePattern": "eth{n}"
     },
     {
-      "id": "sw6",
+      "id": "leaf1",
       "position": {
         "x": 40,
         "y": -180
@@ -61,7 +61,7 @@
       "interfacePattern": "eth{n}"
     },
     {
-      "id": "client1",
+      "id": "client8",
       "position": {
         "x": 720,
         "y": -20
@@ -70,7 +70,7 @@
       "interfacePattern": "eth{n}"
     },
     {
-      "id": "client2",
+      "id": "client7",
       "position": {
         "x": 620,
         "y": -20
@@ -79,7 +79,7 @@
       "interfacePattern": "eth{n}"
     },
     {
-      "id": "client3",
+      "id": "client6",
       "position": {
         "x": 490,
         "y": -20
@@ -88,7 +88,7 @@
       "interfacePattern": "eth{n}"
     },
     {
-      "id": "client4",
+      "id": "client5",
       "position": {
         "x": 390,
         "y": -20
@@ -97,7 +97,7 @@
       "interfacePattern": "eth{n}"
     },
     {
-      "id": "client5",
+      "id": "client1",
       "position": {
         "x": -60,
         "y": -20
@@ -106,7 +106,7 @@
       "interfacePattern": "eth{n}"
     },
     {
-      "id": "client6",
+      "id": "client2",
       "position": {
         "x": 40,
         "y": -20
@@ -115,7 +115,7 @@
       "interfacePattern": "eth{n}"
     },
     {
-      "id": "client7",
+      "id": "client3",
       "position": {
         "x": 170,
         "y": -20
@@ -124,7 +124,7 @@
       "interfacePattern": "eth{n}"
     },
     {
-      "id": "client8",
+      "id": "client4",
       "position": {
         "x": 270,
         "y": -20
