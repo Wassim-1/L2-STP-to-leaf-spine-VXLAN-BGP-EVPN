@@ -1,0 +1,16 @@
+phase,metrique,valeur
+reference,pps_core1_eth2,0
+reference,cpu_switches_total_pct,0
+reference,loadavg_1min,0.08
+reference,entrees_fdb_agg1,50
+reference,ports_distincts_mac_client1,1
+reference,perte_ping_pct,0
+reference,debit_iperf,10.3 Gbits/sec
+tempete,pps_core1_eth2,41933
+tempete,cpu_switches_total_pct,0
+tempete,loadavg_1min,0.38
+tempete,entrees_fdb_agg1,50
+tempete,ports_distincts_mac_client1,3
+tempete,perte_ping_pct,100
+tempete,debit_iperf,0 echec
+apres,perte_ping_pct,0
