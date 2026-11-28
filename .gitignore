@@ -2,3 +2,4 @@ clab-*
 *.pcapng
 *.bak
 sujet.pdf
+mesures/evpn_*/

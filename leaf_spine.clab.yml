@@ -1,20 +1,22 @@
-name: leaf_spine
+name: dc-ls
 
 # Plan de ports (conception 4.8) :
 #   leafN  : eth1 -> spine1, eth2 -> spine2, eth3 -> hôte Locataire 1, eth4 -> hôte Locataire 2
 #   spineN : ethN -> leafN
+# Configuration FRR (underlay + EVPN) : configs/<noeud>/frr.conf
+# Ponts, VXLAN, VRF et hôtes : leaf_spine.sh
 topology:
   defaults:
     kind: linux
     image: ghcr.io/srl-labs/network-multitool:latest
 
   nodes:
-    spine1: { image: quay.io/frrouting/frr:10.2.1 }
-    spine2: { image: quay.io/frrouting/frr:10.2.1 }
-    leaf1:  { image: quay.io/frrouting/frr:10.2.1 }
-    leaf2:  { image: quay.io/frrouting/frr:10.2.1 }
-    leaf3:  { image: quay.io/frrouting/frr:10.2.1 }
-    leaf4:  { image: quay.io/frrouting/frr:10.2.1 }
+    spine1: { image: "quay.io/frrouting/frr:10.2.1", binds: [ "configs/daemons:/etc/frr/daemons", "configs/vtysh.conf:/etc/frr/vtysh.conf", "configs/spine1/frr.conf:/etc/frr/frr.conf" ] }
+    spine2: { image: "quay.io/frrouting/frr:10.2.1", binds: [ "configs/daemons:/etc/frr/daemons", "configs/vtysh.conf:/etc/frr/vtysh.conf", "configs/spine2/frr.conf:/etc/frr/frr.conf" ] }
+    leaf1:  { image: "quay.io/frrouting/frr:10.2.1", binds: [ "configs/daemons:/etc/frr/daemons", "configs/vtysh.conf:/etc/frr/vtysh.conf", "configs/leaf1/frr.conf:/etc/frr/frr.conf" ] }
+    leaf2:  { image: "quay.io/frrouting/frr:10.2.1", binds: [ "configs/daemons:/etc/frr/daemons", "configs/vtysh.conf:/etc/frr/vtysh.conf", "configs/leaf2/frr.conf:/etc/frr/frr.conf" ] }
+    leaf3:  { image: "quay.io/frrouting/frr:10.2.1", binds: [ "configs/daemons:/etc/frr/daemons", "configs/vtysh.conf:/etc/frr/vtysh.conf", "configs/leaf3/frr.conf:/etc/frr/frr.conf" ] }
+    leaf4:  { image: "quay.io/frrouting/frr:10.2.1", binds: [ "configs/daemons:/etc/frr/daemons", "configs/vtysh.conf:/etc/frr/vtysh.conf", "configs/leaf4/frr.conf:/etc/frr/frr.conf" ] }
     # mêmes hôtes que l'architecture A (EF5)
     client1: {}   # h11
     client2: {}   # h21
