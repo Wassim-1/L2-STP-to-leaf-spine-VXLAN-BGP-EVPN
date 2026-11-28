@@ -20,15 +20,21 @@ MAC=$(D client1 cat /sys/class/net/eth1/address)
 mesure() {  # $1 = phase
   L=$1
   echo "-- Mesures : $L"
-  # paquets/s reçus sur core1 eth2
+  # paquets/s reçus sur core1 eth2, et CPU de la machine pendant les mêmes 5 s.
+  # Les ponts commutent dans le noyau (softirq), hors des cgroups des conteneurs :
+  # docker stats affiche 0 %, il faut lire /proc/stat de l'hôte.
   t0=$(date +%s.%N); a=$(D core1 cat /sys/class/net/eth2/statistics/rx_packets)
+  c0=$(head -1 /proc/stat)
   sleep 5
+  c1=$(head -1 /proc/stat)
   b=$(D core1 cat /sys/class/net/eth2/statistics/rx_packets); t1=$(date +%s.%N)
   echo "$L,pps_core1_eth2,$(echo "($b-$a)/($t1-$t0)" | bc)" >> "$OUT/resume.csv"
-  # CPU des conteneurs et charge de la machine
-  docker stats --no-stream --format "{{.Name}},{{.CPUPerc}}" $(docker ps -q --filter name=$P) > "$OUT/cpu_$L.txt"
-  cpu=$(grep -E "$P-(core|agg|acc)" "$OUT/cpu_$L.txt" | awk -F, '{gsub("%","",$2); s+=$2} END{print s+0}')
-  echo "$L,cpu_switches_total_pct,$cpu" >> "$OUT/resume.csv"
+  echo "$c0" > "$OUT/cpu_$L.txt"; echo "$c1" >> "$OUT/cpu_$L.txt"
+  # colonnes de /proc/stat : user nice system idle iowait irq softirq steal
+  echo "$c0 $c1" | awk -v L=$L '{
+    for (i=2; i<=9; i++) { t0+=$i; t1+=$(i+11) }
+    printf "%s,cpu_hote_softirq_pct,%.1f\n", L, 100*($19-$8)/(t1-t0)
+    printf "%s,cpu_hote_total_pct,%.1f\n",   L, 100*(1-($16-$5)/(t1-t0)) }' >> "$OUT/resume.csv"
   echo "$L,loadavg_1min,$(cut -d' ' -f1 /proc/loadavg)" >> "$OUT/resume.csv"
   # table MAC
   echo "$L,entrees_fdb_agg1,$(D agg1 bridge fdb show | wc -l)" >> "$OUT/resume.csv"
