@@ -47,3 +47,5 @@ topology:
     - endpoints: [ "leaf3:eth4", "client6:eth1" ]
     - endpoints: [ "leaf4:eth3", "client7:eth1" ]
     - endpoints: [ "leaf4:eth4", "client8:eth1" ]
+    # câble de rechange pour la mobilité de h11 (leaf1 -> leaf3), S6
+    - endpoints: [ "leaf3:eth5", "client1:eth2" ]

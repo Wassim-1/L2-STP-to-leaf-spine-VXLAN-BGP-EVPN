@@ -31,6 +31,11 @@ vxlan_up() {  # node vni vlan
     x $node bridge vlan add dev vxlan$vni vid $vlan pvid untagged
     # EVPN fournit les MAC distantes : pas d'apprentissage, suppression ARP locale
     x $node bridge link set dev vxlan$vni learning off neigh_suppress on
+    # ECMP par flux : le pilote VXLAN met en cache (par CPU) la route vers chaque VTEP, donc un seul
+    # spine sert tous les flux d'un même CPU. Un paquet marqué contourne ce cache (ip_tunnel_dst_cache_usable)
+    # et la route est choisie par hachage sur le port UDP source, propre à chaque flux.
+    x $node tc qdisc add dev vxlan$vni clsact
+    x $node tc filter add dev vxlan$vni egress matchall action skbedit mark 1
     x $node ip link set vxlan$vni up
 }
 
@@ -64,6 +69,10 @@ leaf_up() {
         x $node bridge fdb replace $ANYCAST_MAC dev br0 vlan $vlan self local
         x $node ip link set vlan$vlan master $vrf
         x $node ip addr add 192.168.$vlan.1/24 dev vlan$vlan
+        # mobilité : l'ARP gratuit d'un hôte qui arrive crée tout de suite son entrée, d'où une route
+        # MAC+IP de séquence supérieure. Sans cela, l'ancien leaf garde l'entrée locale, et sa sonde ARP
+        # n'aboutit pas (l'hôte répond à la MAC anycast, qui s'arrête sur son nouveau leaf).
+        x $node sysctl -qw net.ipv4.conf.vlan$vlan.arp_accept=1
         x $node ip link set vlan$vlan up
     done
 
@@ -77,11 +86,13 @@ leaf_up() {
 
 underlay spine1 "eth1 eth2 eth3 eth4"
 underlay spine2 "eth1 eth2 eth3 eth4"
-#      node   loopback    hôte L1   hôte L2
+#      node   loopback    hôte L1   hôte L2   (+ port de mobilité)
 leaf_up leaf1 10.0.0.11  "eth3:10" "eth4:20"
 leaf_up leaf2 10.0.0.12  "eth3:10" "eth4:20"
-leaf_up leaf3 10.0.0.13  "eth3:11" "eth4:21"
+leaf_up leaf3 10.0.0.13  "eth3:11" "eth4:21 eth5:10"
 leaf_up leaf4 10.0.0.14  "eth3:11" "eth4:21"
+# second câble de h11 vers leaf3 (VLAN 10), inactif tant que h11 n'a pas bougé (S6, EF4)
+x client1 ip link set eth2 down
 
 # hôtes : identiques à l2.sh (EF5)
 setip() {

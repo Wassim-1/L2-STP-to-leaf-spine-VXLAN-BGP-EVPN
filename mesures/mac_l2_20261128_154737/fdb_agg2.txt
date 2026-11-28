@@ -1,0 +1,81 @@
+33:33:00:00:00:01 dev eth0 self permanent
+33:33:ff:00:00:0b dev eth0 self permanent
+01:00:5e:00:00:01 dev eth0 self permanent
+33:33:ff:45:ac:25 dev eth0 self permanent
+33:33:00:00:00:01 dev br0 self permanent
+01:00:5e:00:00:6a dev br0 self permanent
+33:33:00:00:00:6a dev br0 self permanent
+01:00:5e:00:00:01 dev br0 self permanent
+01:80:c2:00:00:21 dev br0 self permanent
+33:33:ff:1f:b9:46 dev br0 self permanent
+aa:c1:ab:1f:b9:46 dev br0 vlan 1 master br0 permanent
+33:33:00:00:00:01 dev VRF-T1 self permanent
+01:00:5e:00:00:01 dev VRF-T1 self permanent
+33:33:00:00:00:01 dev vlan10 self permanent
+01:00:5e:00:00:01 dev vlan10 self permanent
+33:33:ff:1f:b9:46 dev vlan10 self permanent
+33:33:00:00:00:01 dev vlan11 self permanent
+01:00:5e:00:00:01 dev vlan11 self permanent
+33:33:ff:1f:b9:46 dev vlan11 self permanent
+33:33:00:00:00:01 dev VRF-T2 self permanent
+01:00:5e:00:00:01 dev VRF-T2 self permanent
+33:33:00:00:00:01 dev vlan20 self permanent
+01:00:5e:00:00:01 dev vlan20 self permanent
+33:33:ff:1f:b9:46 dev vlan20 self permanent
+33:33:00:00:00:01 dev vlan21 self permanent
+01:00:5e:00:00:01 dev vlan21 self permanent
+33:33:ff:1f:b9:46 dev vlan21 self permanent
+aa:c1:ab:52:fe:ac dev eth6 vlan 21 master br0 permanent
+aa:c1:ab:52:fe:ac dev eth6 vlan 20 master br0 permanent
+aa:c1:ab:52:fe:ac dev eth6 vlan 11 master br0 permanent
+aa:c1:ab:52:fe:ac dev eth6 vlan 10 master br0 permanent
+aa:c1:ab:52:fe:ac dev eth6 master br0 permanent
+33:33:00:00:00:01 dev eth6 self permanent
+01:00:5e:00:00:01 dev eth6 self permanent
+33:33:ff:52:fe:ac dev eth6 self permanent
+aa:c1:ab:2b:98:f8 dev eth7 vlan 21 master br0 permanent
+aa:c1:ab:2b:98:f8 dev eth7 vlan 20 master br0 permanent
+aa:c1:ab:2b:98:f8 dev eth7 vlan 11 master br0 permanent
+aa:c1:ab:2b:98:f8 dev eth7 vlan 10 master br0 permanent
+aa:c1:ab:2b:98:f8 dev eth7 master br0 permanent
+33:33:00:00:00:01 dev eth7 self permanent
+01:00:5e:00:00:01 dev eth7 self permanent
+33:33:ff:2b:98:f8 dev eth7 self permanent
+aa:c1:ab:63:ec:e3 dev eth2 vlan 21 master br0 
+aa:c1:ab:d9:c0:3d dev eth2 vlan 21 master br0 
+aa:c1:ab:cf:49:71 dev eth2 vlan 11 master br0 
+aa:c1:ab:77:2b:0c dev eth2 vlan 20 master br0 
+aa:c1:ab:73:ad:77 dev eth2 vlan 10 master br0 
+aa:c1:ab:80:e3:f9 dev eth2 vlan 20 master br0 
+aa:c1:ab:7a:7a:d4 dev eth2 vlan 21 master br0 permanent
+aa:c1:ab:7a:7a:d4 dev eth2 vlan 20 master br0 permanent
+aa:c1:ab:7a:7a:d4 dev eth2 vlan 11 master br0 permanent
+aa:c1:ab:7a:7a:d4 dev eth2 vlan 10 master br0 permanent
+aa:c1:ab:7a:7a:d4 dev eth2 master br0 permanent
+33:33:00:00:00:01 dev eth2 self permanent
+01:00:5e:00:00:01 dev eth2 self permanent
+33:33:ff:7a:7a:d4 dev eth2 self permanent
+aa:c1:ab:f4:39:dc dev eth5 vlan 21 master br0 permanent
+aa:c1:ab:f4:39:dc dev eth5 vlan 20 master br0 permanent
+aa:c1:ab:f4:39:dc dev eth5 vlan 11 master br0 permanent
+aa:c1:ab:f4:39:dc dev eth5 vlan 10 master br0 permanent
+aa:c1:ab:f4:39:dc dev eth5 master br0 permanent
+33:33:00:00:00:01 dev eth5 self permanent
+01:00:5e:00:00:01 dev eth5 self permanent
+33:33:ff:f4:39:dc dev eth5 self permanent
+aa:c1:ab:1f:b9:46 dev eth3 vlan 21 master br0 permanent
+aa:c1:ab:1f:b9:46 dev eth3 vlan 20 master br0 permanent
+aa:c1:ab:1f:b9:46 dev eth3 vlan 11 master br0 permanent
+aa:c1:ab:1f:b9:46 dev eth3 vlan 10 master br0 permanent
+aa:c1:ab:1f:b9:46 dev eth3 master br0 permanent
+33:33:00:00:00:01 dev eth3 self permanent
+01:00:5e:00:00:01 dev eth3 self permanent
+33:33:ff:1f:b9:46 dev eth3 self permanent
+aa:c1:ab:90:5c:a1 dev eth4 vlan 21 master br0 permanent
+aa:c1:ab:90:5c:a1 dev eth4 vlan 20 master br0 permanent
+aa:c1:ab:90:5c:a1 dev eth4 vlan 11 master br0 permanent
+aa:c1:ab:90:5c:a1 dev eth4 vlan 10 master br0 permanent
+aa:c1:ab:90:5c:a1 dev eth4 master br0 permanent
+33:33:00:00:00:01 dev eth4 self permanent
+01:00:5e:00:00:01 dev eth4 self permanent
+33:33:ff:90:5c:a1 dev eth4 self permanent
