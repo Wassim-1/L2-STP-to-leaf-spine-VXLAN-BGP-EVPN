@@ -1,0 +1,18 @@
+phase,metrique,valeur
+reference,pps_core1_eth2,0
+reference,cpu_hote_softirq_pct,0.0
+reference,cpu_hote_total_pct,0.2
+reference,loadavg_1min,2.37
+reference,entrees_fdb_agg1,77
+reference,ports_distincts_mac_client1,1
+reference,perte_ping_pct,0
+reference,debit_iperf,957 Mbits/sec
+tempete,pps_core1_eth2,27440
+tempete,cpu_hote_softirq_pct,6.3
+tempete,cpu_hote_total_pct,6.3
+tempete,loadavg_1min,1.53
+tempete,entrees_fdb_agg1,77
+tempete,ports_distincts_mac_client1,3
+tempete,perte_ping_pct,70
+tempete,debit_iperf,0 echec
+apres,perte_ping_pct,0

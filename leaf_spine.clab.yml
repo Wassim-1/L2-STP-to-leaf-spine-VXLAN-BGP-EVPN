@@ -1,64 +1,47 @@
 name: leaf_spine
 
+# Plan de ports (conception 4.8) :
+#   leafN  : eth1 -> spine1, eth2 -> spine2, eth3 -> hôte Locataire 1, eth4 -> hôte Locataire 2
+#   spineN : ethN -> leafN
 topology:
+  defaults:
+    kind: linux
+    image: ghcr.io/srl-labs/network-multitool:latest
+
   nodes:
-    spine1:
-      kind: linux
-      image: ghcr.io/srl-labs/network-multitool:latest
-    spine2:
-      kind: linux
-      image: ghcr.io/srl-labs/network-multitool:latest
-    leaf1:
-      kind: linux
-      image: ghcr.io/srl-labs/network-multitool:latest
-    leaf2:
-      kind: linux
-      image: ghcr.io/srl-labs/network-multitool:latest
-    leaf3:
-      kind: linux
-      image: ghcr.io/srl-labs/network-multitool:latest
-    leaf4:
-      kind: linux
-      image: ghcr.io/srl-labs/network-multitool:latest
-    client1:
-      kind: linux
-      image: ghcr.io/srl-labs/network-multitool:latest
-    client2:
-      kind: linux
-      image: ghcr.io/srl-labs/network-multitool:latest
-    client5:
-      kind: linux
-      image: ghcr.io/srl-labs/network-multitool:latest
-    client6:
-      kind: linux
-      image: ghcr.io/srl-labs/network-multitool:latest
-    client3:
-      kind: linux
-      image: ghcr.io/srl-labs/network-multitool:latest
-    client4:
-      kind: linux
-      image: ghcr.io/srl-labs/network-multitool:latest
-    client7:
-      kind: linux
-      image: ghcr.io/srl-labs/network-multitool:latest
-    client8:
-      kind: linux
-      image: ghcr.io/srl-labs/network-multitool:latest
+    spine1: { image: quay.io/frrouting/frr:10.2.1 }
+    spine2: { image: quay.io/frrouting/frr:10.2.1 }
+    leaf1:  { image: quay.io/frrouting/frr:10.2.1 }
+    leaf2:  { image: quay.io/frrouting/frr:10.2.1 }
+    leaf3:  { image: quay.io/frrouting/frr:10.2.1 }
+    leaf4:  { image: quay.io/frrouting/frr:10.2.1 }
+    # mêmes hôtes que l'architecture A (EF5)
+    client1: {}   # h11
+    client2: {}   # h21
+    client3: {}   # h12
+    client4: {}   # h22
+    client5: {}   # h13
+    client6: {}   # h23
+    client7: {}   # h14
+    client8: {}   # h24
 
   links:
-    - endpoints: [ "spine2:eth1", "leaf4:eth1" ]
-    - endpoints: [ "spine2:eth2", "leaf3:eth1" ]
-    - endpoints: [ "leaf2:eth1", "spine1:eth1" ]
-    - endpoints: [ "leaf1:eth1", "spine1:eth2" ]
-    - endpoints: [ "client1:eth1", "leaf1:eth2" ]
-    - endpoints: [ "client2:eth1", "leaf1:eth3" ]
-    - endpoints: [ "client3:eth1", "leaf2:eth2" ]
-    - endpoints: [ "client4:eth1", "leaf2:eth3" ]
-    - endpoints: [ "client5:eth1", "leaf3:eth2" ]
-    - endpoints: [ "client6:eth1", "leaf3:eth3" ]
-    - endpoints: [ "client7:eth1", "leaf4:eth2" ]
-    - endpoints: [ "client8:eth1", "leaf4:eth3" ]
-    - endpoints: [ "leaf2:eth4", "spine2:eth3" ]
-    - endpoints: [ "leaf1:eth4", "spine2:eth4" ]
-    - endpoints: [ "leaf3:eth4", "spine1:eth3" ]
-    - endpoints: [ "leaf4:eth4", "spine1:eth4" ]
+    # spine1 - leaf
+    - endpoints: [ "spine1:eth1", "leaf1:eth1" ]
+    - endpoints: [ "spine1:eth2", "leaf2:eth1" ]
+    - endpoints: [ "spine1:eth3", "leaf3:eth1" ]
+    - endpoints: [ "spine1:eth4", "leaf4:eth1" ]
+    # spine2 - leaf
+    - endpoints: [ "spine2:eth1", "leaf1:eth2" ]
+    - endpoints: [ "spine2:eth2", "leaf2:eth2" ]
+    - endpoints: [ "spine2:eth3", "leaf3:eth2" ]
+    - endpoints: [ "spine2:eth4", "leaf4:eth2" ]
+    # leaf - hôtes
+    - endpoints: [ "leaf1:eth3", "client1:eth1" ]
+    - endpoints: [ "leaf1:eth4", "client2:eth1" ]
+    - endpoints: [ "leaf2:eth3", "client3:eth1" ]
+    - endpoints: [ "leaf2:eth4", "client4:eth1" ]
+    - endpoints: [ "leaf3:eth3", "client5:eth1" ]
+    - endpoints: [ "leaf3:eth4", "client6:eth1" ]
+    - endpoints: [ "leaf4:eth3", "client7:eth1" ]
+    - endpoints: [ "leaf4:eth4", "client8:eth1" ]
