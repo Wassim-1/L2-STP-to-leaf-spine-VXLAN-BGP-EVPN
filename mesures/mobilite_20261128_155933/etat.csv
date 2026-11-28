@@ -1,0 +1,4 @@
+etape,vtep_vu_par_leaf2,seq_mobilite,mac_passerelle_vue_par_h11
+1_h11_sur_leaf1,10.0.0.11,0,02:00:00:00:00:01
+2_h11_sur_leaf3,10.0.0.13,1,02:00:00:00:00:01
+3_h11_revenu_sur_leaf1,10.0.0.11,2,02:00:00:00:00:01

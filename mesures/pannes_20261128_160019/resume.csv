@@ -1,0 +1,8 @@
+scenario,bfd,pire_coupure_panne_moy_s,pire_coupure_retab_moy_s
+leaf4_silencieux,on,0.00,0.00
+leaf4_silencieux_hotes_de_leaf4,on,17.93,0.00
+lien_franc_leaf1_spine1,on,0.13,0.00
+lien_silencieux_leaf1_spine1,off,8.04,0.00
+lien_silencieux_leaf1_spine1,on,0.48,0.00
+spine1_silencieux,off,8.70,0.00
+spine1_silencieux,on,0.75,0.00

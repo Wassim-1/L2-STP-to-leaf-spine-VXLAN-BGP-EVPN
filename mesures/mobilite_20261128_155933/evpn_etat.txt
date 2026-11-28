@@ -1,0 +1,96 @@
+### 1_h11_sur_leaf1
+--- leaf1
+MAC: aa:c1:ab:4a:20:19
+ Intf: eth3(925) VLAN: 10
+ Sync-info: neigh#: 0
+ Local Seq: 0 Remote Seq: 0
+ Uptime: 00:01:00
+ Neighbors:
+    192.168.10.11 Active
+
+--- leaf2
+MAC: aa:c1:ab:4a:20:19
+ Remote VTEP: 10.0.0.11
+ Sync-info: neigh#: 0
+ Local Seq: 0 Remote Seq: 0
+ Uptime: 00:01:00
+ Neighbors:
+    192.168.10.11 Active
+
+--- leaf3
+MAC: aa:c1:ab:4a:20:19
+ Remote VTEP: 10.0.0.11
+ Sync-info: neigh#: 0
+ Local Seq: 0 Remote Seq: 0
+ Uptime: 00:00:46
+ Neighbors:
+    192.168.10.11 Active
+
+--- h11 : passerelle
+192.168.10.1 dev eth1 lladdr 02:00:00:00:00:01 REACHABLE 
+### 2_h11_sur_leaf3
+--- leaf1
+MAC: aa:c1:ab:4a:20:19
+ Remote VTEP: 10.0.0.13
+ Sync-info: neigh#: 0
+ Local Seq: 0 Remote Seq: 1
+ Uptime: 00:01:20
+ Neighbors:
+    192.168.10.11 Active
+
+--- leaf2
+MAC: aa:c1:ab:4a:20:19
+ Remote VTEP: 10.0.0.13
+ Sync-info: neigh#: 0
+ Local Seq: 0 Remote Seq: 1
+ Uptime: 00:00:14
+ Neighbors:
+    192.168.10.11 Active
+
+--- leaf3
+MAC: aa:c1:ab:4a:20:19
+ Intf: eth5(917) VLAN: 10
+ Sync-info: neigh#: 0
+ Local Seq: 1 Remote Seq: 0
+ Uptime: 00:01:06
+ Duplicate detection started at Sat Nov 28 14:59:44 2026
+, detection count 1
+ Neighbors:
+    192.168.10.11 Active
+
+--- h11 : passerelle
+192.168.10.1 dev eth2 lladdr 02:00:00:00:00:01 REACHABLE 
+### 3_h11_revenu_sur_leaf1
+--- leaf1
+MAC: aa:c1:ab:4a:20:19
+ Intf: eth3(925) VLAN: 10
+ Sync-info: neigh#: 0
+ Local Seq: 2 Remote Seq: 1
+ Uptime: 00:01:39
+ Duplicate detection started at Sat Nov 28 15:00:05 2026
+, detection count 1
+ Neighbors:
+    192.168.10.11 Active
+
+--- leaf2
+MAC: aa:c1:ab:4a:20:19
+ Remote VTEP: 10.0.0.11
+ Sync-info: neigh#: 0
+ Local Seq: 0 Remote Seq: 2
+ Uptime: 00:00:34
+ Neighbors:
+    192.168.10.11 Active
+
+--- leaf3
+MAC: aa:c1:ab:4a:20:19
+ Remote VTEP: 10.0.0.11
+ Sync-info: neigh#: 0
+ Local Seq: 1 Remote Seq: 2
+ Uptime: 00:01:26
+ Duplicate detection started at Sat Nov 28 14:59:44 2026
+, detection count 2
+ Neighbors:
+    192.168.10.11 Active
+
+--- h11 : passerelle
+192.168.10.1 dev eth1 lladdr 02:00:00:00:00:01 REACHABLE 

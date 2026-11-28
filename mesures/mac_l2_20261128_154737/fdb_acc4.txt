@@ -1,0 +1,45 @@
+33:33:00:00:00:01 dev eth0 self permanent
+33:33:ff:00:00:03 dev eth0 self permanent
+01:00:5e:00:00:01 dev eth0 self permanent
+33:33:ff:12:94:29 dev eth0 self permanent
+33:33:00:00:00:01 dev br0 self permanent
+01:00:5e:00:00:6a dev br0 self permanent
+33:33:00:00:00:6a dev br0 self permanent
+01:00:5e:00:00:01 dev br0 self permanent
+33:33:ff:2f:fc:48 dev br0 self permanent
+aa:c1:ab:2f:fc:48 dev br0 vlan 1 master br0 permanent
+aa:c1:ab:09:91:2d dev eth4 vlan 21 master br0 
+aa:c1:ab:d9:c0:3d dev eth4 vlan 21 master br0 
+aa:c1:ab:cf:49:71 dev eth4 vlan 11 master br0 
+aa:c1:ab:77:2b:0c dev eth4 vlan 20 master br0 
+aa:c1:ab:73:ad:77 dev eth4 vlan 10 master br0 
+aa:c1:ab:80:e3:f9 dev eth4 vlan 20 master br0 
+aa:c1:ab:09:91:2d dev eth4 vlan 11 master br0 
+aa:c1:ab:70:dc:bc dev eth4 vlan 21 master br0 permanent
+aa:c1:ab:70:dc:bc dev eth4 vlan 20 master br0 permanent
+aa:c1:ab:70:dc:bc dev eth4 vlan 11 master br0 permanent
+aa:c1:ab:70:dc:bc dev eth4 vlan 10 master br0 permanent
+aa:c1:ab:70:dc:bc dev eth4 master br0 permanent
+33:33:00:00:00:01 dev eth4 self permanent
+01:00:5e:00:00:01 dev eth4 self permanent
+33:33:ff:70:dc:bc dev eth4 self permanent
+aa:c1:ab:fd:77:16 dev eth2 vlan 11 master br0 
+aa:c1:ab:bd:fa:95 dev eth2 vlan 11 master br0 permanent
+aa:c1:ab:bd:fa:95 dev eth2 master br0 permanent
+33:33:00:00:00:01 dev eth2 self permanent
+01:00:5e:00:00:01 dev eth2 self permanent
+33:33:ff:bd:fa:95 dev eth2 self permanent
+aa:c1:ab:2f:fc:48 dev eth1 vlan 21 master br0 permanent
+aa:c1:ab:2f:fc:48 dev eth1 vlan 20 master br0 permanent
+aa:c1:ab:2f:fc:48 dev eth1 vlan 11 master br0 permanent
+aa:c1:ab:2f:fc:48 dev eth1 vlan 10 master br0 permanent
+aa:c1:ab:2f:fc:48 dev eth1 master br0 permanent
+33:33:00:00:00:01 dev eth1 self permanent
+01:00:5e:00:00:01 dev eth1 self permanent
+33:33:ff:2f:fc:48 dev eth1 self permanent
+aa:c1:ab:63:ec:e3 dev eth3 vlan 21 master br0 
+aa:c1:ab:f3:72:1f dev eth3 vlan 21 master br0 permanent
+aa:c1:ab:f3:72:1f dev eth3 master br0 permanent
+33:33:00:00:00:01 dev eth3 self permanent
+01:00:5e:00:00:01 dev eth3 self permanent
+33:33:ff:f3:72:1f dev eth3 self permanent
