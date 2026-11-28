@@ -1,0 +1,6 @@
+agg1 834: eth2@if835: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9500 master br0 state blocking priority 32 cost 2 
+agg2 824: eth3@if823: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9500 master br0 state blocking priority 32 cost 2 
+acc1 829: eth4@if830: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9500 master br0 state blocking priority 32 cost 2 
+acc2 832: eth4@if833: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9500 master br0 state blocking priority 32 cost 2 
+acc3 841: eth1@if842: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9500 master br0 state blocking priority 32 cost 2 
+acc4 845: eth1@if846: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9500 master br0 state blocking priority 32 cost 2 

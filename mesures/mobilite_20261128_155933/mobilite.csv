@@ -1,0 +1,5 @@
+mouvement,flux,coupure_s,perte_ping_passerelle_pct
+leaf1_vers_leaf3,client3->192.168.10.11,0.13,0
+leaf1_vers_leaf3,client5->192.168.10.11,0.00,0
+leaf3_vers_leaf1,client3->192.168.10.11,0.13,0
+leaf3_vers_leaf1,client5->192.168.10.11,0.00,0

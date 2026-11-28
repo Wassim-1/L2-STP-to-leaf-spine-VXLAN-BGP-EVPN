@@ -1,0 +1,6 @@
+test,debit,unite
+leaf1_leaf2_1flux,926,Mbits/sec
+leaf1_leaf2_4flux,1.85,Gbits/sec
+leaf1_leaf4_1flux,926,Mbits/sec
+leaf1_leaf4_4flux,1.85,Gbits/sec
+leaf1_leaf4_8flux,1.85,Gbits/sec

@@ -2,3 +2,5 @@ clab-*
 *.pcapng
 *.bak
 sujet.pdf
+mesures/evpn_*/
+mesures/pannes_*/ping_*.txt
